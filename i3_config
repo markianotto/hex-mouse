@@ -1,0 +1,30 @@
+# This is an example of how to setup your i3 config
+
+bindsym Mod4+m mode "hex_mouse" exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py init
+mode "hex_mouse" {
+   bindsym m         exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py 1
+   bindsym comma     exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py 2
+   bindsym period    exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py 3
+   bindsym j         exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py 4
+   bindsym k         exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py 5
+   bindsym l         exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py 6
+   bindsym u         exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py 7
+   bindsym i         exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py 8
+   bindsym o         exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py 9
+   bindsym semicolon exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py move, mode "default"
+   bindsym n         mode "nudge_mouse", exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py move
+}
+
+mode "nudge_mouse" {
+   bindsym m         exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py n1
+   bindsym comma     exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py n2
+   bindsym period    exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py n3
+   bindsym j         exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py n4
+   bindsym k         exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py n5, mode "default"
+   bindsym l         exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py n6
+   bindsym u         exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py n7
+   bindsym i         exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py n8
+   bindsym o         exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py n9
+   bindsym semicolon exec --no-startup-id /home/$USER/hex_mouse/hex_mouse.py click, mode "default"
+   bindsym q mode "default"
+}
